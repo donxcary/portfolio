@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #ff0000;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .about-me, .what-i-do, .why-choose-me, .contact {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.2s;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            width: 45%;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #202020;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgb(255, 255, 255);
+            transition: transform 0.3s;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+        }
+
+        .service ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .service li {
+            margin: 5px 0;
+        }
+
+        .name {
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="about-me">
+            <h1>About Me</h1>
+            <p>Hello! I'm <span class="name">PKay NO</span>, a passionate an app / web developer and graphic designer with a keen eye for detail and a love for creativity. With expertise in industry-leading software like Coral Draw, IDE, Virtual Studio, AutoCAD, Adobe Premiere Pro, Canva, and Photoshop, etc. I transform ideas into visually stunning and impactful content.</p>
+        </div>
+        <div class="what-i-do">
+            <h2>What I Do</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Video Editing</h3>
+                    <ul>
+                        <li>Commercials & Advertisements</li>
+                        <li>YouTube Content</li>
+                        <li>Social Media Clips</li>
+                        <li>Event Highlights</li>
+                        <li>Music Videos</li>
+                        <li>Documentaries</li>
+                        <li>Product Demonstrations</li>
+                        <li>Promotional Videos</li>
+                        <li>Event Footage</li>
+                        <li>Corporate Videos</li>
+                        <li>Product Reviews</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <h3>Graphic Design</h3>
+                    <ul>
+                        <li>Logo Design</li>
+                        <li>Brand Identity</li>
+                        <li>Social Media Graphics</li>
+                        <li>Marketing Materials</li>
+                        <li>Packaging Design</li>
+                        <li>T-Shirt Design</li>
+                        <li>Poster Design</li>
+                        <li>Flyer Design</li>
+                        <li>Brochure Design</li>
+                        <li>Business Card Design</li>
+                        <li>Book Cover Design</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <h3>Research Project</h3>
+                    <ul>
+                        <li>Project Writing</li>
+                        <li>Research Proposal & Journal</li>
+                        <li>Research Review</li>
+                        <li>Data Analyst</li>
+                        <li>Market Research</li>
+                        <li>Business Analysis</li>
+                        <li>Competitor Analysis</li>
+                        <li>Market Analysis</li>
+                        <li>Market Segmentation</li>
+                        <li>Product Design</li>
+                        <li>User Experience (UX)</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <h3>Web / App Development</h3>
+                    <ul>
+                        <li>Website Design</li>
+                        <li>Website Development</li>
+                        <li>Website Maintenance</li>
+                        <li>E-Commerce</li>
+                        <li>API Integration</li>
+                        <li>Content Management System</li>
+                        <li>Web Application Development</li>
+                        <li>Mobile App Development</li>
+                        <li>Cross-Platform Development</li>
+                        <li>Software Development</li>
+                        <li>Software Maintenance</li>
+                        <li>Software Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="why-choose-me">
+            <h2>Reasons to Choose Me</h2>
+            <p>I seamlessly merge technical proficiency with innovative thinking to produce exceptional outcomes that elevate brands. My unwavering commitment to excellence and client satisfaction ensures the success of every project I tackle.</p>
+        </div>
+        <div class="contact">
+            <h2>Together, we will turn your vision into reality with collaboration!</h2>
+        </div>
+    </div>
+    <script>
+        // Add animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.about-me, .what-i-do, .why-choose-me, .contact, h1, h2, h3');
+            const options = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
