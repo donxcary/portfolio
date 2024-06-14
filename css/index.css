@@ -321,7 +321,7 @@ body {
 
 .logo img:hover {
     opacity: 1;
-    transform: rotate(-45deg);
+    transform: rotate(90deg);
 }
 
 #navigation-bar img {
@@ -902,7 +902,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all .4s ease;
-    width: 83%;
+    width: 98%;
     border-radius: 10px;
     background: #0703ff;
 }
